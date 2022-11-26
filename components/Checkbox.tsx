@@ -5,9 +5,18 @@ import styles from '../styles/Section.module.css';
 import Image from 'next/image';
 import checkbox from '../public/checkbox.png';
 
-const Checkbox = () => {
+interface CheckboxProps {
+  changeNumDone: (amount: number) => void
+}
+
+const Checkbox = (props: CheckboxProps) => {
 
   const [ checked, setChecked ] = useState(false); 
+  const toggleQuestionComplete = () => {
+    if(checked) props.changeNumDone(-1)
+    else props.changeNumDone(1);
+    setChecked(!checked);
+  }
 
   return (
     <div className={
@@ -17,7 +26,7 @@ const Checkbox = () => {
       }>
       <div 
       className={styles.statusButton} 
-      onClick={() => setChecked(!checked)}
+      onClick={toggleQuestionComplete}
       >
         { checked && 
         <Image 

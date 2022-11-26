@@ -1,11 +1,15 @@
 import styles from '../styles/Section.module.css';
 import Checkbox from './Checkbox';
 
-const Section = () => {
+interface SectionProps {
+  changeNumDone: (amount: number) => void
+}
+
+const Section = (props: SectionProps) => {
 
   const problem = (
     <div className={styles.problem}>
-      <Checkbox />
+      <Checkbox changeNumDone={props.changeNumDone}/>
     </div>
   )
 

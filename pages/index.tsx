@@ -2,9 +2,10 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
-import Section from '../components/Section';
+import HomePage from '../components/HomePage';
 
 const Home = () => {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,9 +14,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Nav />
-      <div className={styles.sectionContainer}>
-        <Section />
-      </div>
+        <HomePage />
       <Footer />
     </div>
   )

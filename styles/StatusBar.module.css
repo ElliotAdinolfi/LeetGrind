@@ -1,0 +1,26 @@
+.statusContainer {
+  height: 80%;
+  width: 10%;
+  position: fixed;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullBar {
+  width: 50%;
+  height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  border: 3px solid black;
+  box-shadow: 7px 7px 0 0 rgb(0, 0, 0);
+}
+
+.doneBar {
+  position: fixed;
+  background-color: var(--success);
+  width: 4.55%;
+  transition: .5s;
+  max-height: 69.6vh;
+}
