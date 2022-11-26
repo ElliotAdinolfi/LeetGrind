@@ -1,0 +1,67 @@
+
+
+.outerSection {
+  height: 100%;
+  width: 100%;
+  padding: 40px 0 40px 0;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 15px 0px 15px 0px;
+  border: 2px solid black;
+  box-shadow: 7px 7px 0 0 rgb(0, 0, 0);
+}
+
+.title {
+  font-size: 1.2rem;
+}
+
+.problem {
+  height: 75px;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+
+.problem:last-child {
+  border-bottom: 0;
+}
+
+.status {
+  height: 100%;
+  width: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 10px solid var(--background);
+  transition: .75s;
+}
+
+.statusActive {
+  height: 100%;
+  width: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 10px solid var(--success);
+  transition: .75s;
+}
+
+.statusButton {
+  margin-left: -10px;
+  height: 21px;
+  width: 21px;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statusButton:hover {
+  cursor: pointer;
+}

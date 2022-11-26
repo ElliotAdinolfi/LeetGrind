@@ -29,11 +29,9 @@ html {
   3. Allow percentage-based heights in the application
 */
 html, body {
-  height: 100%;
   background-size: 120% 120%;
   font-family: 'Source Code Pro', monospace;
   background: #fff;
-  overflow: hidden;
 }
 /*
   Typographic tweaks!

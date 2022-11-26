@@ -1,4 +1,16 @@
 .container {
   padding: 0 2rem;
+  margin-top: 20px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
+.sectionContainer {
+  display: flex;
+  width: 80%;
+  height: 80%;
+}
