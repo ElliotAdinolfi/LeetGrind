@@ -10,6 +10,7 @@
 
 .fullBar {
   width: 50%;
+  max-width: 80px;
   height: 70vh;
   display: flex;
   align-items: flex-end;
@@ -21,6 +22,7 @@
   position: fixed;
   background-color: var(--success);
   width: 4.55%;
+  max-width: 74px;
   transition: .5s;
   max-height: 69.6vh;
 }
