@@ -1,0 +1,44 @@
+
+.navBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-width: 100%;
+  display: flex;
+  padding: 2% 5%;
+  height: 6vh;
+  color: var(--headline);
+  justify-content: space-between;
+}
+
+.leftNav {
+  display: flex;
+  align-items: center;
+  height: 4vh;
+  background: linear-gradient(150deg, #29005c, #520379, #850895, #af0e9d, #c7178c, #de2074, #dd4264, #dd6262);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.rightNav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  padding: 1.5px;
+}
+
+.logo:nth-child(2), .logo:nth-child(3) {
+  font-size: 2.1rem;
+  margin-bottom: 6px;
+}
+
+.logo:nth-child(1), .logo:nth-child(4) {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
