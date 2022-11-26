@@ -11,6 +11,9 @@ const StatusBar = ({ numDone }: StatusBarProps) => {
 
   return (
     <div className={styles.statusContainer}>
+      <div className={styles.number}>
+        {numDone}/75
+      </div>
       <div className={styles.fullBar}> 
         <div className={styles.doneBar} style={{ height: `${percent}vh` }}>
 

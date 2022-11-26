@@ -1,4 +1,5 @@
 .statusContainer {
+  font-size: 1.2rem;
   height: 80%;
   width: 10%;
   position: fixed;
@@ -6,11 +7,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .fullBar {
   width: 50%;
   max-width: 80px;
+  max-height: 680px;
   height: 70vh;
   display: flex;
   align-items: flex-end;
@@ -20,9 +23,9 @@
 
 .doneBar {
   position: fixed;
-  background-color: var(--success);
+  background: linear-gradient(0deg, #05c662, #05c863, #05cb64, #05cd66, #05cf67, #05d268, #05d469, #06d66a, #06d96b, #06db6d, #06de6e, #06e06f);
   width: 4.55%;
   max-width: 74px;
   transition: .5s;
-  max-height: 69.6vh;
+  max-height: 675px;
 }

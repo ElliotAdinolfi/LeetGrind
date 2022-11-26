@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   height: 4vh;
+  margin-left: 20px;
   background: linear-gradient(150deg, #29005c, #520379, #850895, #af0e9d, #c7178c, #de2074, #dd4264, #dd6262);
   background-size: 100%;
   background-clip: text;
@@ -39,7 +40,9 @@
 }
 
 .footer {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-top: 30px;
   min-width: 100%;
   display: flex;
   padding: 2% 5%;
