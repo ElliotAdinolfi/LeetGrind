@@ -11,7 +11,7 @@ interface SectionProps {
 
 const Section = (props: SectionProps) => {
 
-  const difficulty = "Medium"
+  const difficulty = "Easy"
 
   const problem = (
     <div className={styles.problem}>
@@ -19,6 +19,7 @@ const Section = (props: SectionProps) => {
       <Name />
       <Difficulty difficulty={difficulty}/>
       <Video />
+      <Code />
     </div>
   )
 
@@ -34,11 +35,11 @@ const Section = (props: SectionProps) => {
       <span className={styles.title}> Test Section </span>
       <span className={styles.title}>{">"}</span>
       <div style={{display: "flex", flexDirection: "row", textAlign: "center", marginTop: "10px"}}>
-        <span style={{ width: "8%" }}>finish</span>
+        <span style={{ width: "8%" }}>Done</span>
         <span style={{ width: "30%" }}>Title</span>
         <span style={{ width: "15%" }}>Difficulty</span>
         <span style={{ width: "15%" }}>Walkthrough</span>
-        <span style={{ width: "27%" }}>Solution</span>
+        <span style={{ width: "32%" }}>Solution</span>
       </div>
       <div className={styles.section}>
         {problems}

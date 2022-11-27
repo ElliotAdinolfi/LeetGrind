@@ -78,6 +78,7 @@
   position: absolute;
   width: 400px;
   transition: 1s;
+  margin-top: 5px;
 }
 
 .options:hover {

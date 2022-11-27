@@ -11,7 +11,7 @@ const Difficulty = ({ difficulty }: DifficultyProps) => {
 
   useEffect(() => {
     if(difficulty === 'Easy') setStyle({ color: "#05954b" })
-    else if(difficulty === 'Medium') setStyle({ color: "#c7178c" })
+    else if(difficulty === 'Medium') setStyle({ color: "hsl(52deg 63% 49%)" })
     else if(difficulty === 'Hard') setStyle({ color: "#c7178c" })
   }, [difficulty]);
 
