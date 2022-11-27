@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react';
-import styles from '../styles/Section.module.css';
+import styles from '../styles/Problem.module.css';
 import Image from 'next/image';
 import checkbox from '../public/checkbox.png';
 

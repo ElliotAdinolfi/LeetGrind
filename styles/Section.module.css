@@ -25,43 +25,9 @@
   height: 75px;
   width: 100%;
   border-bottom: 2px solid black;
+  display: flex;
 }
 
 .problem:last-child {
   border-bottom: 0;
-}
-
-.status {
-  height: 100%;
-  width: 8%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-left: 10px solid var(--background);
-  transition: .75s;
-}
-
-.statusActive {
-  height: 100%;
-  width: 8%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-left: 10px solid var(--success);
-  transition: .75s;
-}
-
-.statusButton {
-  margin-left: -10px;
-  height: 21px;
-  width: 21px;
-  border: 2px solid black;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.statusButton:hover {
-  cursor: pointer;
 }

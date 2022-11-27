@@ -64,10 +64,14 @@
   width: 150px;
   box-shadow: 3px 3px 0 0 rgb(0, 0, 0);
   margin-right: 50px;
+  transition: .5s ease-in-out;
 }
 
 .menu:hover {
   cursor: pointer;
+  transform: translateX(-3px) translateY(-3px);
+  box-shadow: 8px 8px 0 0 rgb(0, 0, 0);
+  transition: .5s ease-in-out;
 }
 
 .options {

@@ -9,6 +9,7 @@ html {
   --success: hsl(149, 95%, 45%);
   --error: hsl(341, 100%, 45%);
   --type: #e60082;
+  --stuff: #05954b;
 }
 
 /*
@@ -31,6 +32,8 @@ html {
 */
 html, body {
   background-size: 120% 120%;
+  max-width: 100vw;
+  overflow-x: hidden;
   font-family: 'Source Code Pro', monospace;
   background: #fff;
 }

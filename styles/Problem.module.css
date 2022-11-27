@@ -1,0 +1,73 @@
+
+.status {
+  height: 100%;
+  width: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 10px solid var(--background);
+  transition: .75s;
+  border-right: 2px solid black;
+}
+
+.statusActive {
+  height: 100%;
+  width: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 10px solid var(--success);
+  transition: .75s;
+  border-right: 2px solid black;
+}
+
+.statusButton {
+  margin-left: -10px;
+  height: 21px;
+  width: 21px;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statusButton:hover {
+  cursor: pointer;
+}
+
+.nameContainer {
+  width: 30%;
+  height: 100%;
+  border-right: 2px solid black;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.difficultyContainer {
+  font-size: 1.3rem;
+  display: flex;
+  width: 15%;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid black;
+}
+
+.videoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  border-right: 2px solid black;
+}
+
+.videoButton {
+  transition: .5s ease-in-out;
+}
+
+.videoButton:hover {
+  cursor: pointer;
+  transform: translateX(2px) translateY(2px);
+  transition: .5s ease-in-out;
+}
