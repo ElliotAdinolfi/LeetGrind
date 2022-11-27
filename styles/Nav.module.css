@@ -22,7 +22,11 @@
 
 .rightNav {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: row;
+  color: var(--headline);
+  font-size: 1.25rem;
 }
 
 .logo {
@@ -48,4 +52,38 @@
   padding: 2% 5%;
   color: var(--headline);
   justify-content: space-between;
+}
+
+.menu {
+  outline: none;
+  border: 2px solid black;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 150px;
+  box-shadow: 3px 3px 0 0 rgb(0, 0, 0);
+  margin-right: 50px;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+.options {
+  position: absolute;
+  width: 400px;
+  transition: 1s;
+}
+
+.options:hover {
+  cursor: default;
+}
+
+.const {
+  color: var(--const);
+}
+
+.type {
+  color: var(--type);
 }

@@ -8,6 +8,7 @@ html {
   --tertiary: hsl(230 100% 70%);
   --success: hsl(149, 95%, 45%);
   --error: hsl(341, 100%, 45%);
+  --type: #e60082;
 }
 
 /*
