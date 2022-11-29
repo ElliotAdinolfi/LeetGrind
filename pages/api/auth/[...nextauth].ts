@@ -7,10 +7,10 @@ export const authOptions = {
       // @ts-ignore
       clientId: process.env.GITHUB_ID,
       // @ts-ignore
-      clientSecret: process.env.GITHUB_SECRET
+      clientSecret: process.env.GITHUB_SECRET,
+      authorization: "https://github.com/login/oauth/authorize?scope=read:user+user:email"
     }),
   ],
 }
 
 export default NextAuth(authOptions);
-  

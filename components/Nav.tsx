@@ -18,15 +18,15 @@ const Nav = () => {
 
   const { data: session } = useSession();
 
-  // useEffect(() => {
-  //   if(session) {
-  //     // @ts-ignore
-  //     axios.post('/api/createUser', { user: session?.user.email })
-  //       .then(res => {
-  //         console.log(res);
-  //       })
-  //   }
-  // }, [session])
+  useEffect(() => {
+    if(session) {
+      // @ts-ignore
+      axios.post('/api/createUser', { user: session?.user.email })
+        .then(res => {
+          console.log(res);
+        })
+    }
+  }, [session])
 
   return (
     <div className={styles.navBar}>
