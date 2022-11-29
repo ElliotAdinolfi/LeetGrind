@@ -7,7 +7,6 @@ interface StatusBarProps {
 const StatusBar = ({ numDone }: StatusBarProps) => {
 
   const percent = Math.floor(((numDone / 10) * 70));
-  console.log(percent)
 
   return (
     <div className={styles.statusContainer}>

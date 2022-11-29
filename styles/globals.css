@@ -26,6 +26,8 @@ html {
 }
 #__next {
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 /*
   3. Allow percentage-based heights in the application
