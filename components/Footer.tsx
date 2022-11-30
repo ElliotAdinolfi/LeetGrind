@@ -5,8 +5,8 @@ const Nav = () => {
     <div className={styles.footer}>
       <div className={styles.leftNav}>
         <span className={styles.logo}>{"<"}</span>
-        <span className={styles.logo}> /L</span>
-        <span className={styles.logo}>G</span>
+        <span className={styles.logo}> /Algo</span>
+        <span className={styles.logo}>Reps</span>
         <span className={styles.logo}>{">"}</span>
       </div>
       <div className={styles.rightNav}>

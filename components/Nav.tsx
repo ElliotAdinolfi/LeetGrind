@@ -32,8 +32,8 @@ const Nav = () => {
     <div className={styles.navBar}>
       <div className={styles.leftNav}>
         <span className={styles.logo}>{"<"}</span>
-        <span className={styles.logo}>L</span>
-        <span className={styles.logo}>G</span>
+        <span className={styles.logo}>Algo</span>
+        <span className={styles.logo}>Reps</span>
         <span className={styles.logo}>{">"}</span>
       </div>
       <div className={styles.rightNav}>
@@ -41,12 +41,11 @@ const Nav = () => {
         {session ?
           <>
             Signed in as {session.user?.email} <br />
-            <button onClick={() => signOut()}>Sign out</button>
+            <div className={styles.signOut} onClick={() => signOut()}>Sign out</div>
           </>
           : 
           <>
-            Not signed in <br />
-            <button onClick={() => signIn()}>Sign in</button>
+            <button className={styles.signIn} onClick={() => signIn()}>Sign in</button>
           </>
           
         }

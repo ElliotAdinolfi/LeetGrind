@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>LeetGrind</title>
+        <title>Algo Reps</title>
         <meta name="description" content="LeetGrind, an application for learning JavaScript and algorithms" />
         <link rel="icon" href="/favicon.png" />
       </Head>
