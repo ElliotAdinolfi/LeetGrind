@@ -2,19 +2,17 @@ import styles from '../styles/StatusBar.module.css';
 
 interface StatusBarProps {
   numDone: number
+  total: number
 }
 
-const StatusBar = ({ numDone }: StatusBarProps) => {
+const StatusBar = ({ numDone, total }: StatusBarProps) => {
 
-  const percent = Math.floor(((numDone / 10) * 70));
+  const percent = Math.floor(((numDone / total) * 50));
 
   return (
     <div className={styles.statusContainer}>
-      <div className={styles.number}>
-        {numDone}/75
-      </div>
       <div className={styles.fullBar}> 
-        <div className={styles.doneBar} style={{ height: `${percent}vh` }}>
+        <div className={styles.doneBar} style={{ width: `${percent}vh` }}>
 
         </div>
       </div>

@@ -4,36 +4,45 @@ import Name from './Name';
 import Code from './Code';
 import Difficulty from './Difficulty';
 import Video from './Video';
+import StatusBar from './StatusBar';
+import { useState } from 'react';
 
 interface SectionProps {
-  changeNumDone: (amount: number) => void
+  name: string
+  qArray: []
 }
 
 const Section = (props: SectionProps) => {
+  
+  const [ numDone, setNumDone ] = useState(0);
 
-  const difficulty = "Easy"
+  const changeNumDone = (amount:number) => {
+    const newNum = numDone + amount;
+    setNumDone(newNum);
+  };
 
-  const problem = (
-    <div className={styles.problem}>
-      <Checkbox changeNumDone={props.changeNumDone}/>
-      <Name />
-      <Difficulty difficulty={difficulty}/>
+  const problems = props.qArray.map((element:any) => {
+    return (
+    <div key={element.title} className={styles.problem}>
+      <Checkbox changeNumDone={changeNumDone}/>
+      <Name link={element.link} title={element.title}/>
+      <Difficulty difficulty={element.difficulty}/>
       <Video />
       <Code />
     </div>
-  )
-
-  const problems: JSX.Element[] = []
-  for(let i = 0; i < 5; i++) {
-    problems.push(problem)
-  }
+    )
+  });
 
 
   return (
     <div className={styles.outerSection}>
-      <span className={styles.title}>{"<"}</span>
-      <span className={styles.title}> Test Section </span>
-      <span className={styles.title}>{">"}</span>
+      <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", flexDirection: "row"}}>
+        <span className={styles.title}>{"<"} {props.name} {">"}</span>
+        <span><StatusBar numDone={numDone} total={props.qArray.length} /></span>
+        <div>
+          <span style={{ fontSize: "1.1rem"}}>{numDone} / 11</span>
+        </div>
+      </div>
       <div style={{display: "flex", flexDirection: "row", textAlign: "center", marginTop: "10px"}}>
         <span style={{ width: "8%" }}>Done</span>
         <span style={{ width: "30%" }}>Title</span>
@@ -45,7 +54,7 @@ const Section = (props: SectionProps) => {
         {problems}
       </div>
       <span className={styles.title}>{"< /"}</span>
-      <span className={styles.title}> Test Section </span>
+      <span className={styles.title}> {props.name} </span>
       <span className={styles.title}>{">"}</span>
     </div>
   )

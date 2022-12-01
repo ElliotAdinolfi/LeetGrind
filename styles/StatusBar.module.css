@@ -1,30 +1,19 @@
 .statusContainer {
-  font-size: 1.2rem;
-  height: 80%;
-  width: 10%;
-  position: fixed;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  min-width: 300px;
+  min-height: 40px;
+  width: 50vh;
+  border: 2px solid black;
+  box-shadow: 3px 3px 0 0 rgb(0, 0, 0);
 }
 
 .fullBar {
-  width: 50%;
-  max-width: 80px;
-  height: 70vh;
-  display: flex;
-  align-items: flex-end;
-  border: 3px solid black;
-  box-shadow: 7px 7px 0 0 rgb(0, 0, 0);
+  background-color: rgb(202, 202, 202);
+  width: 0;
 }
 
 .doneBar {
-  position: fixed;
   background: linear-gradient(0deg, #05c662, #05c863, #05cb64, #05cd66, #05cf67, #05d268, #05d469, #06d66a, #06d96b, #06db6d, #06de6e, #06e06f);
-  width: 4.55%;
-  max-width: 74px;
+  min-height: 40px;
+  max-width: 50.6vw;
   transition: .5s;
-  max-height: 69.5vh;
 }

@@ -46,7 +46,7 @@
 }
 
 .difficultyContainer {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   display: flex;
   width: 15%;
   justify-content: center;
@@ -99,4 +99,20 @@
   transform: translateX(-2px) translateY(-2px);
   box-shadow: 6px 6px 0 0 rgb(0, 0, 0);
   transition: .5s;
+}
+
+.link {
+  width: calc(100%);
+  background-image: linear-gradient(90deg, hsl(265deg, 100%, 50%), hsl(300deg, 100%, 50%));
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  background-size: 0% 2px;
+  transition: background-size .4s;
+  color: hsl(333deg, 100%, 45%);
+}
+
+.link:hover {
+  background-size: 100% 2px;
+  /* color:black; */
+  color: hsl(265deg, 100%, 50%);
 }

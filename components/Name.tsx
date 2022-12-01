@@ -1,9 +1,18 @@
 import styles from '../styles/Problem.module.css';
 
-const Name = () => {
+interface NameProps {
+  title: string
+  link: string
+}
+
+const Name = (props: NameProps) => {
   return (
     <div className={styles.nameContainer}>
-      Remove Nth Node From End of List
+      <a href={props.link} target='_blank' rel='noreferrer'>
+        <span className={styles.link} >
+          {props.title}
+        </span>  
+      </a>
     </div>
   );
 };
