@@ -29,7 +29,7 @@ const HomePage = () => {
           setQList(res.data);
           setSectionList(res.data.map((element: any) => {
             const sectionName = Object.keys(element)[1];
-            const qArray = element[sectionName];
+            const qArray = element[sectionName]
             return <Section key={sectionName} name={sectionName} qArray={qArray}/>
           }));
       });
@@ -40,7 +40,7 @@ const HomePage = () => {
     // @ts-ignore
     <div className={styles.sectionContainer}>
       <>
-        {sectionList || null}
+        {sectionList ? sectionList : null}
       </>
     </div>
   )

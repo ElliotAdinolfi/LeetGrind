@@ -5,7 +5,7 @@ import Code from './Code';
 import Difficulty from './Difficulty';
 import Video from './Video';
 import StatusBar from './StatusBar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface SectionProps {
   name: string
@@ -15,23 +15,31 @@ interface SectionProps {
 const Section = (props: SectionProps) => {
   
   const [ numDone, setNumDone ] = useState(0);
+  const [ problems, setProblems ] = useState<null | JSX.Element[]>(null);
 
-  const changeNumDone = (amount:number) => {
-    const newNum = numDone + amount;
-    setNumDone(newNum);
-  };
+  
+  useEffect(() => {
+    const changeNumDone = (amount:number) => {
+      const newNum = numDone + amount;
+      setNumDone(newNum);
+    };
+    setProblems(Object.keys(props.qArray).map((element:any) => {
+      console.log(props.qArray[element])
+      return (
+        // @ts-ignore
+      <div key={element} className={styles.problem}>
+        <Checkbox changeNumDone={changeNumDone}/>
+        {/* @ts-ignore */}
+        <Name link={props.qArray[element].link} title={element}/>
+        {/* @ts-ignore */}
+        <Difficulty difficulty={props.qArray[element].difficulty}/>
+        <Video />
+        <Code />
+      </div>
+      )
+    }));
+  }, [numDone, props.qArray])
 
-  const problems = props.qArray.map((element:any) => {
-    return (
-    <div key={element.title} className={styles.problem}>
-      <Checkbox changeNumDone={changeNumDone}/>
-      <Name link={element.link} title={element.title}/>
-      <Difficulty difficulty={element.difficulty}/>
-      <Video />
-      <Code />
-    </div>
-    )
-  });
 
 
   return (

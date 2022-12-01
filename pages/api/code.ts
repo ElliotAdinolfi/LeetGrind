@@ -1,7 +1,7 @@
 import { Request, Response, ErrorRequestHandler } from 'express';
 import clientPromise from '../../lib/mongodb';
 
-const questions = async (req: Request, res: Response) => {
+const code = async (req: Request, res: Response) => {
   if(req.method === 'GET') {
     const client = await clientPromise;
     const db = client.db('LeetGrind');
@@ -11,4 +11,4 @@ const questions = async (req: Request, res: Response) => {
   };
 }
 
-export default questions;
+export default code;

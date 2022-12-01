@@ -2,18 +2,18 @@
   min-width: 300px;
   min-height: 40px;
   width: 50vh;
-  border: 2px solid black;
-  box-shadow: 3px 3px 0 0 rgb(0, 0, 0);
+  outline: 2px solid black;
+  box-shadow: 4px 4px 0 0 rgb(0, 0, 0);
+  background-color: rgb(216, 216, 216);
 }
 
 .fullBar {
-  background-color: rgb(202, 202, 202);
   width: 0;
 }
 
 .doneBar {
   background: linear-gradient(0deg, #05c662, #05c863, #05cb64, #05cd66, #05cf67, #05d268, #05d469, #06d66a, #06d96b, #06db6d, #06de6e, #06e06f);
   min-height: 40px;
-  max-width: 50.6vw;
+  max-width: 50.4vw;
   transition: .5s;
 }

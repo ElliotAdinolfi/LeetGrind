@@ -1,6 +1,7 @@
 import styles from '../styles/Nav.module.css';
 import Image from 'next/image';
 import arrowDown from '../public/arrowDown.png'
+import logo2 from '../public/logo2.png';
 import { useEffect, useState } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import axios from 'axios';
@@ -31,21 +32,22 @@ const Nav = () => {
   return (
     <div className={styles.navBar}>
       <div className={styles.leftNav}>
-        <span className={styles.logo}>{"<"}</span>
-        <span className={styles.logo}>Algo</span>
-        <span className={styles.logo}>Reps</span>
-        <span className={styles.logo}>{">"}</span>
+        <Image 
+          src={logo2}
+          alt="image of website logo"
+          height={80}
+          />
       </div>
       <div className={styles.rightNav}>
 
         {session ?
           <>
             Signed in as {session.user?.email} <br />
-            <div className={styles.signOut} onClick={() => signOut()}>Sign out</div>
+            <div className={styles.signOut} onClick={() => signOut()}>Sign Out</div>
           </>
           : 
           <>
-            <button className={styles.signIn} onClick={() => signIn()}>Sign in</button>
+            <button className={styles.signIn} onClick={() => signIn()}>Sign In / Up</button>
           </>
           
         }

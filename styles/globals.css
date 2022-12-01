@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 html {
-  --background: hsl(0deg 0% 100%);
+  --background: hsl(0deg 0% 90%);
   --headline: hsl(0deg 0% 10%);
   --paragraph: hsl(0deg 0% 15%);
   --highlight: hsl(320deg 100 50%);
@@ -84,6 +84,7 @@ h5 {
 */
 #root, #__next {
   isolation: isolate;
+  background-color: var(--background);
 }
 
 #root {
