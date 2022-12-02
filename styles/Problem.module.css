@@ -116,3 +116,19 @@
   /* color:black; */
   color: hsl(265deg, 100%, 50%);
 }
+
+@media screen and (max-width: 1000px) {
+  .jsbutton, .tsbutton {
+    border: none;
+    box-shadow: none;
+  }
+
+  .jsbutton p, .tsbutton p {
+    display: none;
+    /* color: red; */
+  }
+
+  .difficultyContainer {
+    font-size: .9rem;
+  }
+}

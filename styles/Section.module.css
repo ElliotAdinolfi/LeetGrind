@@ -18,13 +18,13 @@
 }
 
 .title {
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: bold;
   max-width: fit-content;
 }
 
 .problem {
-  height: 75px;
+  height: 90px;
   width: 100%;
   border-bottom: 2px solid black;
   display: flex;
@@ -32,4 +32,41 @@
 
 .problem:last-child {
   border-bottom: 0;
+}
+
+.status {
+  /* display: block; */
+  display: flex;
+  justify-content: space-around;
+  min-width: 800px;
+}
+
+@media screen and (max-width: 1310px) {
+  .status {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .status {
+    display: none;
+  }
+
+  .outerSection {
+    width: 95vw;
+    margin-left: none;
+    font-size: .9rem;
+  }
+
+  .labels {
+    font-size: .9rem;
+  }
+
+  .labels span:nth-of-type(4) {
+    display: none;
+  }
+
+  .labels span:nth-of-type(5) {
+    margin-left: 45px;
+  }
 }

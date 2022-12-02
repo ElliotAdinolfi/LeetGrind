@@ -24,7 +24,7 @@ const Section = (props: SectionProps) => {
       setNumDone(newNum);
     };
     setProblems(Object.keys(props.qArray).map((element:any) => {
-      console.log(props.qArray[element])
+      console.log(numDone)
       return (
         // @ts-ignore
       <div key={element} className={styles.problem}>
@@ -33,8 +33,10 @@ const Section = (props: SectionProps) => {
         <Name link={props.qArray[element].link} title={element}/>
         {/* @ts-ignore */}
         <Difficulty difficulty={props.qArray[element].difficulty}/>
-        <Video />
-        <Code />
+        {/* @ts-ignore */}
+        <Video vidLink={props.qArray[element].video} />
+        {/* @ts-ignore */}
+        <Code solutions={props.qArray[element].solution}/>
       </div>
       )
     }));
@@ -46,12 +48,12 @@ const Section = (props: SectionProps) => {
     <div className={styles.outerSection}>
       <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", flexDirection: "row"}}>
         <span className={styles.title}>{"<"} {props.name} {">"}</span>
-        <span><StatusBar numDone={numDone} total={props.qArray.length} /></span>
-        <div>
+        <div className={styles.status}>
+          <StatusBar numDone={numDone} total={Object.keys(props.qArray).length} />
           <span style={{ fontSize: "1.1rem"}}>{numDone} / 11</span>
         </div>
       </div>
-      <div style={{display: "flex", flexDirection: "row", textAlign: "center", marginTop: "10px"}}>
+      <div className={styles.labels} style={{display: "flex", flexDirection: "row", textAlign: "center", marginTop: "10px"}}>
         <span style={{ width: "8%" }}>Done</span>
         <span style={{ width: "30%" }}>Title</span>
         <span style={{ width: "15%" }}>Difficulty</span>

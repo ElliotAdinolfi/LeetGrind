@@ -17,3 +17,11 @@
   height: 80%;
   flex-direction: column;
 }
+
+@media screen and (max-width: 875px) {
+
+  .sectionContainer {
+    width: 100vw;
+    align-items: center;
+  }
+}

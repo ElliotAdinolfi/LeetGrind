@@ -9,7 +9,6 @@ import { stringify } from 'querystring';
 const HomePage = () => {
 
 
-  const [ qList, setQList ] = useState<any>(null);
   const [ sectionList, setSectionList ] = useState<null | {}[]>(null);
 
   const getQuestionsFromDB = async () => {
@@ -26,7 +25,6 @@ const HomePage = () => {
     
     getQuestionsFromDB()
       .then((res: any) => {
-          setQList(res.data);
           setSectionList(res.data.map((element: any) => {
             const sectionName = Object.keys(element)[1];
             const qArray = element[sectionName]

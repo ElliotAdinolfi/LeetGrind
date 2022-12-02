@@ -3,11 +3,15 @@ import Image from 'next/image';
 import javascript from '../public/javascript.png';
 import typescript from '../public/typescript.png';
 
-const Code = () => {
+interface CodeProps {
+  solutions: string;
+}
+
+const Code = ({ solutions }: CodeProps) => {
   return (
     <div className={styles.codeContainer}>
       <div className={styles.jsbutton}>
-        JavaScript
+        <p>JavaScript</p>
         <Image 
         src={javascript}
         alt="Picture of JavaScript logo"
@@ -16,7 +20,7 @@ const Code = () => {
         />
       </div>
       <div className={styles.tsbutton}>
-        TypeScript
+        <p>TypeScript</p>
         <Image 
         src={typescript}
         alt="Picture of JavaScript logo"

@@ -6,9 +6,11 @@ import comingsoon from '../public/comingsoon.png';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-const Video = () => {
+interface VideoProps {
+  vidLink: string
+}
 
-  const display: string | null = 'stuff';
+const Video = ({vidLink}: VideoProps) => {
   const [ toBeShown, setToBeShown ] = useState(
     <Image 
     className={styles.videoButton}
@@ -19,7 +21,7 @@ const Video = () => {
     />
   )
   useEffect(() => {
-    if(display === null) {
+    if(!vidLink) {
       setToBeShown(
         <>
           <Image 
@@ -31,7 +33,7 @@ const Video = () => {
         </>
       )
     }
-  }, [display]);
+  }, [vidLink]);
 
   return (
     <div className={styles.videoContainer}>
