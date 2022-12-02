@@ -33,6 +33,7 @@ const Nav = () => {
     <div className={styles.navBar}>
       <div className={styles.leftNav}>
         <Image 
+          className={styles.logo}
           src={logo2}
           alt="image of website logo"
           height={80}
@@ -42,7 +43,7 @@ const Nav = () => {
 
         {session ?
           <>
-            Signed in as {session.user?.email} <br />
+            <div className={styles.email}>Signed in as {session.user?.email}</div><br/>
             <div className={styles.signOut} onClick={() => signOut()}>Sign Out</div>
           </>
           : 
