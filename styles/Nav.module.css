@@ -130,11 +130,12 @@
   .navBar {
     margin-top: 20px;
     margin-bottom: 10px;
+    /* flex-direction: column; */
   }
 
   .logo {
-    height: 75px;
-    width: 200px;
+    height: 80px;
+    width: 250px;
   }
 
   .signIn, .signOut {

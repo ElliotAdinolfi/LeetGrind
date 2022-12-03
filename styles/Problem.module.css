@@ -113,7 +113,6 @@
 
 .link:hover {
   background-size: 100% 2px;
-  /* color:black; */
   color: hsl(265deg, 100%, 50%);
 }
 
