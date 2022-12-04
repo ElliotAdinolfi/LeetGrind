@@ -22,7 +22,7 @@ const Nav = () => {
   useEffect(() => {
     if(session) {
       // @ts-ignore
-      axios.post('/api/createUser', { user: session?.user.email })
+      axios.post('/api/user', { user: session?.user.email })
         .then(res => {
           console.log(res);
         })
