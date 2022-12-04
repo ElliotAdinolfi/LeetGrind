@@ -29,18 +29,22 @@
   outline: 2.5px solid black;
   box-shadow: 7px 7px 10px 1px rgb(0, 0, 0);
   display: grid;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr 2fr;
+  border-radius: 3px;
 }
 
 .cardTitle {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  font-size: 1.2rem;
+  margin-left: 2vw;
+  font-size: 1.7rem;
 }
 
-.cardTitle div:first-of-type {
-  font-size: 1.6rem;
+.cardFoot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 2vw;
 }
 
 @media screen and (max-width: 875px) {

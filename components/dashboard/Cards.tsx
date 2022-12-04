@@ -12,9 +12,6 @@ const Cards = ({group}: CardGroups) => {
   const [ userData, setUserData ] = useState(null);
   const [ qObj, setQObj ] = useState<null | {}>(null);
   const [ complete, setComplete ] = useState(null);
-  const [ style, setStyle ] = useState({
-    borderBottom: "6px solid hsl(300deg, 100%, 50%)"
-  })
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -24,37 +21,35 @@ const Cards = ({group}: CardGroups) => {
     }}).then(res => {
       if(res.data[0]) {
         setUserData(res.data[0]);
-        setQObj(res.data[0].topics[group]);
-        setComplete(res.data[0].topics[group].complete);
-      }
-    }).then(() => {
-      if(qObj && complete === (Object.keys(qObj).length - 1)) {
-        setStyle({
-          borderBottom: "6px solid #05c662"
-        })
+        const object = res.data[0].topics[group];
+        setQObj(object);
+        setComplete(object.complete);
       }
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
 
   return (
-    <div className={styles.card} style={style}>
+    <div className={styles.card} 
+      style={qObj && complete === (Object.keys(qObj).length - 1) ? 
+      { borderBottom: "6px solid #05c662"} 
+      : { borderBottom: "6px solid hsl(300deg, 100%, 50%)"  }}
+    >
       <div className={styles.cardTitle}>
         <div>
           {group}
         </div>
+      </div>
+      <div>
+
+      </div>
+      <div className={styles.cardFoot}>
         { qObj ?
           <div>
             {complete} / {Object.keys(qObj).length - 1}
           </div>
           : null
         }
-      </div>
-      <div>
-
-      </div>
-      <div>
-
       </div>
     </div>
   )
