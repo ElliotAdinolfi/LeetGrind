@@ -32,8 +32,8 @@ const Cards = ({group}: CardGroups) => {
   return (
     <div className={styles.card} 
       style={qObj && complete === (Object.keys(qObj).length - 1) ? 
-      { borderBottom: "6px solid #05c662"} 
-      : { borderBottom: "6px solid hsl(300deg, 100%, 50%)"  }}
+      { borderBottom: "7px solid #05c662"} 
+      : { borderBottom: "7px solid hsl(300deg, 100%, 50%)"  }}
     >
       <div className={styles.cardTitle}>
         <div>
@@ -46,10 +46,14 @@ const Cards = ({group}: CardGroups) => {
       <div className={styles.cardFoot}>
         { qObj ?
           <div>
-            {complete} / {Object.keys(qObj).length - 1}
+            {/* @ts-ignore */}
+            {Math.floor((complete / (Object.keys(qObj).length - 1)) * 100)}% ({complete} / {Object.keys(qObj).length - 1}) complete
           </div>
           : null
         }
+        <div className={styles.cardBtn}>
+          <p>Get Reps in 💪</p>
+        </div>
       </div>
     </div>
   )
