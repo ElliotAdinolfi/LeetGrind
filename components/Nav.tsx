@@ -8,26 +8,14 @@ import axios from 'axios';
 
 const Nav = () => {
 
-  // const [ style, setStyle ] = useState({ opacity: "0"})
-
-  // const clickedMenu = () => {
-  //   setStyle({ opacity: "1" })
-  //   setTimeout(() => {
-  //     setStyle({ opacity: "0" });
-  //   }, 2000);
-  // };
-
   const { data: session } = useSession();
 
   useEffect(() => {
     if(session) {
       // @ts-ignore
-      axios.post('/api/user', { user: session?.user.email })
-        .then(res => {
-          console.log(res);
-        })
+      axios.post('/api/user', { user: session?.user.email });
     }
-  }, [session])
+  }, [session]);
 
   return (
     <div className={styles.navBar}>
@@ -52,22 +40,6 @@ const Nav = () => {
           </>
           
         }
-        {/* <pre className={styles.type}>type </pre>
-        <pre className={styles.const}>questions = </pre>
-        <div>
-          <pre className={styles.menu} onClick={clickedMenu}>
-            Grind75 
-            <Image 
-              src={arrowDown}
-              alt="image of an arrow downward"
-              width={15}
-              height={15}
-            />
-          </pre>
-          <div className={styles.options} style={style}>
-            More Coming Soon! 😄
-          </div>
-        </div> */}
       </div>
     </div>
   )

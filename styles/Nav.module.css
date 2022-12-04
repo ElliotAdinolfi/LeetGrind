@@ -54,37 +54,6 @@
   justify-content: space-between;
 }
 
-.menu {
-  outline: none;
-  border: 2px solid black;
-  background: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 150px;
-  box-shadow: 3px 3px 0 0 rgb(0, 0, 0);
-  margin-right: 50px;
-  transition: .5s ease-in-out;
-}
-
-.menu:hover {
-  cursor: pointer;
-  transform: translateX(-3px) translateY(-3px);
-  box-shadow: 8px 8px 0 0 rgb(0, 0, 0);
-  transition: .5s ease-in-out;
-}
-
-.options {
-  position: absolute;
-  width: 400px;
-  transition: 1s;
-  margin-top: 5px;
-}
-
-.options:hover {
-  cursor: default;
-}
-
 .const {
   color: var(--const);
 }
