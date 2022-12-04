@@ -34,6 +34,7 @@ const Cards = ({group}: CardGroups) => {
           console.log(Math.floor((object.complete / (Object.keys(object).length - 1)) * 100));
         }
       });
+      if(userData) console.log(userData);
     }
   }, [group, session, userData]);
 
