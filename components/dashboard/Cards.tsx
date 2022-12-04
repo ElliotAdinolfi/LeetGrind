@@ -15,19 +15,22 @@ const Cards = ({group}: CardGroups) => {
   const { data: session } = useSession();
 
   useEffect(() => {
-    axios.get('/api/user', { params: {
-      // @ts-ignore
-      username: session?.user.email
-    }}).then(res => {
-      if(res.data[0]) {
-        setUserData(res.data[0]);
-        const object = res.data[0].topics[group];
-        setQObj(object);
-        setComplete(object.complete);
-      }
-    });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session]);
+    if(!userData) {
+      axios.get('/api/user', { params: {
+        // @ts-ignore
+        username: session?.user.email
+      }}).then(res => {
+        if(res.data[0]) {
+          setUserData(res.data[0]);
+          const object = res.data[0].topics[group];
+          setQObj(object);
+          setComplete(object.complete);
+        }
+      });
+    }
+  }, [group, session, userData]);
+
+  
 
   return (
     <div className={styles.card} 
