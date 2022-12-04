@@ -46,8 +46,7 @@ const Cards = ({group}: CardGroups) => {
       <div className={styles.cardFoot}>
         { qObj ?
           <div>
-            {/* @ts-ignore */}
-            {Math.floor((complete / (Object.keys(qObj).length - 1)) * 100)}% ({complete} / {Object.keys(qObj).length - 1}) complete
+            {Math.floor(((complete || 0) / (Object.keys(qObj).length - 1)) * 100)}% ({complete} / {Object.keys(qObj).length - 1}) complete
           </div>
           : null
         }
