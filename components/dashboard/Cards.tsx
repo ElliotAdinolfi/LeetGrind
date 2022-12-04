@@ -12,6 +12,7 @@ const Cards = ({group}: CardGroups) => {
   const [ userData, setUserData ] = useState(null);
   const [ qObj, setQObj ] = useState<null | {}>(null);
   const [ complete, setComplete ] = useState(null);
+  const [ percent, setPercent ] = useState<null | JSX.Element>(null);
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -25,6 +26,12 @@ const Cards = ({group}: CardGroups) => {
           const object = res.data[0].topics[group];
           setQObj(object);
           setComplete(object.complete);
+          setPercent(
+            <div>
+              {Math.floor((object.complete / (Object.keys(object).length - 1)) * 100)}% ({object.complete} / {Object.keys(object).length - 1}) complete
+            </div>
+          )
+          console.log(Math.floor((object.complete / (Object.keys(object).length - 1)) * 100));
         }
       });
     }
@@ -47,12 +54,7 @@ const Cards = ({group}: CardGroups) => {
 
       </div>
       <div className={styles.cardFoot}>
-        { qObj ?
-          <div>
-            {Math.floor(((complete || 0) / (Object.keys(qObj).length - 1)) * 100)}% ({complete} / {Object.keys(qObj).length - 1}) complete
-          </div>
-          : null
-        }
+        {percent}
         <div className={styles.cardBtn}>
           <p>Get Reps in 💪</p>
         </div>
