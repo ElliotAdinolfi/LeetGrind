@@ -2,6 +2,7 @@ import styles from '../../styles/Dashboard.module.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 
 interface CardGroups {
   group: string
@@ -30,15 +31,11 @@ const Cards = ({group}: CardGroups) => {
             <div>
               {Math.floor((object.complete / (Object.keys(object).length - 1)) * 100)}% ({object.complete} / {Object.keys(object).length - 1}) complete
             </div>
-          )
-          console.log(Math.floor((object.complete / (Object.keys(object).length - 1)) * 100));
-        }
+          );
+        };
       });
-      if(userData) console.log(userData);
-    }
+    };
   }, [group, session, userData]);
-
-  
 
   return (
     <div className={styles.card} 
@@ -56,9 +53,9 @@ const Cards = ({group}: CardGroups) => {
       </div>
       <div className={styles.cardFoot}>
         {percent}
-        <div className={styles.cardBtn}>
+        <Link href={`/questions/${group}`} className={styles.cardBtn}>
           <p>Get Reps in 💪</p>
-        </div>
+        </Link>
       </div>
     </div>
   )
