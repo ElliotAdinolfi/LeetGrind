@@ -1,7 +1,7 @@
 import styles from '../styles/Nav.module.css';
 import Image from 'next/image';
-import arrowDown from '../public/arrowDown.png'
 import logo2 from '../public/logo2.png';
+import account from '../public/account.png';
 import { useEffect, useState } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import axios from 'axios';
@@ -9,6 +9,7 @@ import axios from 'axios';
 const Nav = () => {
 
   const { data: session } = useSession();
+  const [ accountMenu, setAccountMenu ] = useState(false);
 
   useEffect(() => {
     if(session) {
@@ -16,6 +17,12 @@ const Nav = () => {
       axios.post('/api/user', { user: session?.user.email });
     }
   }, [session]);
+
+  const handleAccountClick = () => {
+    setAccountMenu(!accountMenu);
+  };
+
+  // {session.user?.email}
 
   return (
     <div className={styles.navBar}>
@@ -28,11 +35,24 @@ const Nav = () => {
           />
       </div>
       <div className={styles.rightNav}>
-
         {session ?
           <>
-            <div className={styles.email}>Signed in as {session.user?.email}</div><br/>
-            <div className={styles.signOut} onClick={() => signOut()}>Sign Out</div>
+            {
+              accountMenu ?
+              <div className={styles.accountMenu}>
+                <div>Signed in as {session.user?.email}</div>
+                <div onClick={() => signOut()}>Sign Out</div>
+              </div>
+              : null
+            }
+            <Image 
+            src={account}
+            alt="image of account icon"
+            width={71}
+            height={70}
+            onClick={handleAccountClick}
+            style={{cursor: "pointer"}}
+            />
           </>
           : 
           <>
