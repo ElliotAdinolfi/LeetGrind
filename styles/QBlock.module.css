@@ -1,0 +1,25 @@
+.container {
+  width: 80%;
+  max-width: 1200px;
+  min-height: 150px;
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr 2fr;
+  height: 10%;
+  border: 2px solid black;
+  place-items: center;
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+
+.reps {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}

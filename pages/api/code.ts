@@ -6,7 +6,6 @@ const code = async (req: Request, res: Response) => {
     const client = await clientPromise;
     const db = client.db('LeetGrind');
     const qList = await db.collection('Questions').find({}).toArray();
-    // console.log(qList)
     res.status(200).json(qList);
   };
 }

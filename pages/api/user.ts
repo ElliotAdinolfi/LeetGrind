@@ -40,8 +40,10 @@ const createUser = async (req: Request, res: Response) => {
   if(req.method === 'GET') {
     const client = await clientPromise;
     const { username } = req.query;
+    console.log(req)
     const db = client.db('LeetGrind');
     const user = await db.collection('Users').find({ user: username }).toArray();
+    console.log(user)
     res.status(200).json(user);
   }
 
