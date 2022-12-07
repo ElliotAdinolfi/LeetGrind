@@ -50,6 +50,7 @@ const Groups = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Nav />
+      <p style={{fontSize: "2.0rem", margin: "5vh"}} >{"<"} {query.groups} {">"}</p>
       <div className={styles.container}>
         {questions ? questions : null}
       </div>
